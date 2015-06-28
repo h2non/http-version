@@ -12,25 +12,25 @@ npm install http-version --save
 
 ## Versioning strategies
 
-Supported versioning strategies by priority
+Versioning strategies are defined by match order priority
 
 For information about different HTTP APIs version strategies, see [http-api-versioning](https://github.com/h2non/http-api-versioning)
 
-### Header
+#### Header
 
 ```
 GET /resource HTTP/1.1
 Version: 1.0
 ```
 
-### Accept version
+#### Accept version
 
 ```
 GET /resource HTTP/1.1
 Accept: application/json; version=1.0
 ```
 
-### Path
+#### Path
 
 ```
 GET /v1.0/resource HTTP/1.1
@@ -59,9 +59,9 @@ app.listen(3000)
 
 ## API
 
-### version(version, [ strategies ], handle) `=>` Function(req, res, next)
+#### version(version, [ strategies ], handle) `=>` Function(req, res, next)
 
-### version.strategies `=>` Array[Function]
+#### version.strategies `=>` Array[Function]
 
 ## License
 
