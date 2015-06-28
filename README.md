@@ -1,6 +1,7 @@
 # http-version [![Build Status](https://api.travis-ci.org/h2non/http-version.svg?branch=master&style=flat)](https://travis-ci.org/h2non/http-version) [![NPM](https://img.shields.io/npm/v/http-version.svg)](https://www.npmjs.org/package/http-version)
 
-[connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express) compatible middleware for API version switching/routing. It supports multiple [versioning strategies](#versioning-strategies).
+HTTP API version matching middleware compatible with [connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express).
+It supports multiple [versioning strategies](#versioning-strategies).
 
 Inspired by [vhost](https://github.com/express/vhost) middleware
 
