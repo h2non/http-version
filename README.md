@@ -2,7 +2,7 @@
 
 HTTP API version matching middleware compatible with [connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express). Supports multiple [versioning strategies](#versioning-strategies).
 
-Inspired by [vhost](https://github.com/express/vhost) middleware
+Inspired by [vhost](https://github.com/expressjs/vhost) middleware
 
 ## Installation
 
