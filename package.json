@@ -1,7 +1,7 @@
 {
   "name": "http-version",
   "version": "0.1.0",
-  "description": "connect/express compatible middleware for HTTP API version switching (vhost-like)",
+  "description": "connect/express compatible middleware for HTTP API version switching/routing",
   "repository": "h2non/http-version",
   "author": "Tomas Aparicio",
   "license": "MIT",
