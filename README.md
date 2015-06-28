@@ -46,6 +46,13 @@ var version = require('http-version')
 var oldAPI = express()
 var newAPI = express()
 
+oldAPI.get('/test', testHandler)
+newAPI.get('/test', testHandler)
+
+function testHandler(req, res) {
+  res.end('Processing request from API version: ' + req.version)
+}
+
 // Create the main app
 var app = express()
 

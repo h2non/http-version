@@ -4,14 +4,14 @@ var version = require('..')
 
 // Create express apps
 var oldAPI = express()
-oldAPI.get('/test', function (req, res) {
-  res.send('Hello world from old API')
-})
-
 var newAPI = express()
-newAPI.get('/test', function (req, res) {
-  res.send('Hello world from new API')
-})
+
+oldAPI.get('/test', testHandler)
+newAPI.get('/test', testHandler)
+
+function testHandler(req, res) {
+  res.end('Processing request from API version: ' + req.version)
+}
 
 // Create the main app
 var app = express()
@@ -27,7 +27,7 @@ app.listen(3000)
 request('http://localhost:3000')
   .get('/test')
   .set('Version', '1.0')
-  .expect(200, 'Hello world from old API')
+  .expect(200, 'Processing request from API version: 1.0')
   .end(function (err) {
     if (err) {
       return console.error('Oops:', err)
@@ -38,7 +38,7 @@ request('http://localhost:3000')
 request('http://localhost:3000')
   .get('/test')
   .set('Version', '2.0')
-  .expect(200, 'Hello world from new API')
+  .expect(200, 'Processing request from API version: 2.0')
   .end(function (err) {
     if (err) {
       return console.error('Oops:', err)
