@@ -1,10 +1,68 @@
-# api-versioning
+# http-version [![Build Status](https://api.travis-ci.org/h2non/http-version.svg?branch=master&style=flat)](https://travis-ci.org/h2non/http-version) [![NPM](https://img.shields.io/npm/v/http-version.svg)](https://www.npmjs.org/package/http-version)
 
-[vhost](https://github.com/expressjs/vhost)-like [connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express) 
-middleware but based on API versioning
+[connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express) compatible middleware for API version switching supporting multiple [versioning strategies](#versioning-strategies).
 
-**Work in progress**
+Inspired by [vhost](https://github.com/express/vhost) middleware
 
-## License 
+## Installation
+
+```bash
+npm install http-version --save
+```
+
+## Versioning strategies
+
+Supported versioning strategies by priority
+
+For information about different HTTP APIs version strategies, see [http-api-versioning](https://github.com/h2non/http-api-versioning)
+
+### Header
+
+```
+GET /resource HTTP/1.1
+Version: 1.0
+```
+
+### Accept version
+
+```
+GET /resource HTTP/1.1
+Accept: application/json; version=1.0
+```
+
+### Path
+
+```
+GET /v1.0/resource HTTP/1.1
+```
+
+## Usage
+
+```js
+var express = require('express')
+var version = require('http-version')
+
+// Create express apps
+var oldAPI = express()
+var newAPI = express()
+
+// Create the main app
+var app = express()
+
+// Attach the version middlewares per each app
+app.use(version('1.0', oldAPI))
+app.use(version('2.0', newAPI))
+
+// Start server
+app.listen(3000)
+```
+
+## API
+
+### version(version, [ strategies ], handle) `=>` Function(req, res, next)
+
+### version.strategies `=>` Array[Function]
+
+## License
 
 MIT - Tomas Aparicio
