@@ -2,7 +2,7 @@
 
 HTTP API version middleware pluggable with [connect](https://github.com/senchalabs/connect)/[express](https://github.com/strongloop/express)/[rocky](https://github.com/h2non/rocky). Supports multiple [versioning strategies](#versioning-strategies).
 
-Works like [vhost](https://github.com/expressjs/vhost) middleware
+Inspired by [vhost](https://github.com/expressjs/vhost) middleware
 
 ## Installation
 
