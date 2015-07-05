@@ -18,6 +18,7 @@ For information about different HTTP APIs version strategies, see [http-api-vers
 
 #### Header
 
+Supported headers are (case insensitive): `Version`, `X-Version`, `API-Version` and `X-API-Version`
 ```
 GET /resource HTTP/1.1
 Version: 1.0
